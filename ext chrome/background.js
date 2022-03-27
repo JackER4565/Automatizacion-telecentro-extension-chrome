@@ -1,6 +1,6 @@
 chrome.runtime.onInstalled.addListener(() => {
     chrome.storage.local.set({
-        zonaes: "32"
+        zonaes: "15"
     });
 });
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
