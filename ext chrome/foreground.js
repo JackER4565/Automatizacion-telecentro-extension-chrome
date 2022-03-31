@@ -134,8 +134,10 @@ qzona.addEventListener('change', () => {
 
 
 
-//buscar tkt boton limpiar
-/* if(document.querySelector("#headingOne > div.collapsed > h4") != null){
+//buscar tkt boton limpiar lo volvieron a romper
+ if(document.querySelector("#headingOne > div.collapsed > h4") != null){
+	 console.log("test");
+	 /*
     document.querySelector("#collapse-Seach > div > div.btn-group > button.btn.btn-warning").addEventListener("click", function() {
         document.querySelector("#TKT-BUSCAR-TIPO-RED").value = null;
     const children = document.querySelector("#myDropdown").childNodes;
@@ -146,8 +148,22 @@ qzona.addEventListener('change', () => {
     }
     });
 
-});
-} *///buscar tkt
+});*/
+
+ // buscar nodo
+ const queryString = window.location.search;
+ const urlParams = new URLSearchParams(queryString);
+ const product = urlParams.get('nodo');
+ console.log(queryString);
+// ?nodo=XX00XX
+ if (product != 'null'){
+console.log(product);
+// nodo
+
+document.getElementById("TKT-BUSCAR-ESTADO").value = ['Abierto', 'Completado', 'En Curso', 'Pausado', 'Terminado'];
+document.getElementById("TKT-BUSCAR-NODO-autocom").value = product + ", ";
+buscarParametrosBusqueda();
+} //buscar tkt
 
 
 function encambio(){
@@ -275,5 +291,5 @@ if(value == "5c1ab11a1d2eefd2f37a755e"){
 // if iway
 
 if(window.location.href == 'http://iway.telecentro.net.ar/index.php' || window.location.href == 'http://iway.telecentro.net.ar/'){
-        window.location.href = "http://iway.telecentro.net.ar/body.php"
+        window.location.href = "http://iway.telecentro.net.ar/body.php";
 }

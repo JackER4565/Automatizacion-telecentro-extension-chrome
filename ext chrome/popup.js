@@ -4,6 +4,7 @@ window.addEventListener('DOMContentLoaded', function() {
     var link = document.getElementById('vertktbutt');
     var link2 = document.getElementById('buscarTkt');
     var link3 = document.getElementById('CrearTkt');
+	var link4 = document.getElementById('Nodobtn');
     // onClick's logic below:
     link.addEventListener('click', function() {
       var inpt = document.getElementById("vertkt").value;
@@ -20,7 +21,14 @@ window.addEventListener('DOMContentLoaded', function() {
         var newURL = "https://moica2.telecentro.net.ar/viewCrearTktManual.php";
         chrome.tabs.create({ url: newURL });
     });
+        link4.addEventListener('click', function() {
+          var inpt = document.getElementById("vernodo").value;
+        var newURL = "http://moica2.telecentro.net.ar/buscarTicket.php?nodo=" + inpt;
+        chrome.tabs.create({ url: newURL });
+    });
 });
+
+
 
 document.getElementById("vertkt")
     .addEventListener("keyup", function(event) {
