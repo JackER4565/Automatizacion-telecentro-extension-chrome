@@ -293,3 +293,13 @@ if(value == "5c1ab11a1d2eefd2f37a755e"){
 if(window.location.href == 'http://iway.telecentro.net.ar/index.php' || window.location.href == 'http://iway.telecentro.net.ar/'){
         window.location.href = "http://iway.telecentro.net.ar/body.php";
 }
+	 
+// m5 v2 y v3
+//if(window.location.href == ' http://m5v2.telecentro.net.ar/login2.php' || window.location.href == 'http://m5test.telecentro.net.ar/login2.php' && document.querySelector("#proceed-button") != null){
+//        document.querySelector("#proceed-button").click ();
+
+//}
+	 if(document.querySelector("#proceed-button") != null){
+        document.querySelector("#proceed-button").click ();
+
+}
