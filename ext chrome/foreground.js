@@ -137,6 +137,7 @@ qzona.addEventListener('change', () => {
 //buscar tkt boton limpiar lo volvieron a romper
  if(document.querySelector("#headingOne > div.collapsed > h4") != null){
 	 console.log("test");
+ }
 	 /*
     document.querySelector("#collapse-Seach > div > div.btn-group > button.btn.btn-warning").addEventListener("click", function() {
         document.querySelector("#TKT-BUSCAR-TIPO-RED").value = null;
@@ -151,6 +152,7 @@ qzona.addEventListener('change', () => {
 });*/
 
  // buscar nodo
+ /*
  const queryString = window.location.search;
  const urlParams = new URLSearchParams(queryString);
  const product = urlParams.get('nodo');
@@ -164,7 +166,7 @@ document.getElementById("TKT-BUSCAR-ESTADO").value = ['Abierto', 'Completado', '
 document.getElementById("TKT-BUSCAR-NODO-autocom").value = product + ", ";
 buscarParametrosBusqueda();
 } //buscar tkt
-
+*/
 
 function encambio(){
     var changeEvent = document.createEvent("HTMLEvents");
@@ -294,12 +296,134 @@ if(window.location.href == 'http://iway.telecentro.net.ar/index.php' || window.l
         window.location.href = "http://iway.telecentro.net.ar/body.php";
 }
 	 
-// m5 v2 y v3
-//if(window.location.href == ' http://m5v2.telecentro.net.ar/login2.php' || window.location.href == 'http://m5test.telecentro.net.ar/login2.php' && document.querySelector("#proceed-button") != null){
-//        document.querySelector("#proceed-button").click ();
 
-//}
-	 if(document.querySelector("#proceed-button") != null){
-        document.querySelector("#proceed-button").click ();
+// if usuarios
+if(window.location.href == 'https://usuarios.telecentro.net.ar/home.php'){
+    document.querySelector("body > div > div > div > div:nth-child(10) > a > div")
+//style
+    newStyle = ` <style>
+    #usefull_nav {
+        display: none;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-right: 15px
+        padding-left: 15px
 
+        border-radius: 0 0 5px 5px;
+        box-shadow: 15px 10px 8px 2px #000;
+    }
+    #us_access_nav {
+        font-size: 20px;
+        display: block;
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 40px;
+        overflow: hidden;
+        background: white 10px 10px / 20px 20px no-repeat;
+        padding-left: 45px;
+        background-image: repeating-linear-gradient(#ccc, #ccc 2px, #fff 2px, #fff 4px);
+        z-index: 1;
+        text-align: left;
+    }
+</style>
+    `;
+   let head = document.getElementsByTagName("head")[0];
+head.insertAdjacentHTML("beforeend", newStyle);
+
+let elements = document.getElementsByTagName("span");
+let i;
+
+for (i = elements.length - 1; i > 0; i--) {
+//for (i = 0; i < elements.length; i++) {
+
+  if (elements[i].textContent == "B2B" || 
+        elements[i].textContent == "Gestión de requerimientos" || 
+        elements[i].textContent == "IPAM" || 
+        elements[i].textContent == "Monitoreo Hubs" || 
+        elements[i].textContent == "Monitoreo avanzado de clientes" ||
+        elements[i].textContent == "Monitoreo de visitas" ||
+        elements[i].textContent == "Sistema de Eventos de Servicios" ||
+        elements[i].textContent == "Sonda a Sistemas" || 
+        elements[i].textContent == "VIENA"){
+            elements[i].parentElement.parentElement.remove();
+  }}
+//nav Bars
+newNav1 = `
+<br>
+<p><button id="us_access_nav">Otros Botones</button></p>
+<nav id="usefull_nav" style="display: none;">
+<div class="row" style="margin:0px;padding:0px;padding-bottom: 5px">
+    <div class="col-md-2" style="margin:0px;padding:4px;">
+        <a href="scripts/postPerfilUrl.php?sistema=B2B&amp;perfil=OP-GGR-CEOP" target="_blank" style="border:1px solid #e53030;" class="btn btn-default btn-home" role="button">
+        <div class="btn-home-icon" style="background-color: #e53030;background-image:url(https://b2bdb.telecentro.net.ar/css/logo.png);">&nbsp;</div>
+        <span>B2B</span>
+        </a>
+    </div>
+    <div class="col-md-2" style="margin:0px;padding:4px;">
+        <a href="scripts/postPerfilUrl.php?sistema=Gestión de requerimientos&amp;perfil=ADMIN" target="_blank" style="border:1px solid #74a9d8;" class="btn btn-default btn-home" role="button">
+        <div class="btn-home-icon" style="background-color: #74a9d8;background-image:url(http://gestionrq.telecentro.net.ar/img/icon.png);">&nbsp;</div>
+        <span>Gestión de requerimientos</span>
+        </a>
+    </div>
+    <div class="col-md-2" style="margin:0px;padding:4px;">
+							<a href="scripts/postPerfilUrl.php?sistema=IPAM&amp;perfil=Administrator" target="_blank" style="border:1px solid #000000;" class="btn btn-default btn-home" role="button">
+							<div class="btn-home-icon" style="background-color: #000000;">&nbsp;</div>
+							<span>IPAM</span>
+							</a>
+	</div>
+    <div class="col-md-2" style="margin:0px;padding:4px;">
+							<a href="scripts/postPerfilUrl.php?sistema=Monitoreo Hubs&amp;perfil=PUBLIC" target="_blank" style="border:1px solid black;" class="btn btn-default btn-home" role="button">
+							<div class="btn-home-icon" style="">&nbsp;</div>
+							<span>Monitoreo Hubs</span>
+							</a>
+	</div>
+    <div class="col-md-2" style="margin:0px;padding:4px;">
+							<a href="scripts/postPerfilUrl.php?sistema=Monitoreo avanzado de clientes&amp;perfil=OP-GGR-CEOP" target="_blank" style="border:1px solid black;" class="btn btn-default btn-home" role="button">
+							<div class="btn-home-icon" style="">&nbsp;</div>
+							<span>Monitoreo avanzado de clientes</span>
+							</a>
+	</div>
+    <div class="col-md-2" style="margin:0px;padding:4px;">
+							<a href="scripts/postPerfilUrl.php?sistema=Monitoreo de visitas&amp;perfil=OP-GGR-CEOP" target="_blank" style="border:1px solid #000000;" class="btn btn-default btn-home" role="button">
+							<div class="btn-home-icon" style="background-color: #000000;">&nbsp;</div>
+							<span>Monitoreo de visitas</span>
+							</a>
+	</div>
+    <div class="col-md-2" style="margin:0px;padding:4px;">
+							<a href="scripts/postPerfilUrl.php?sistema=Sistema de Eventos de Servicios&amp;perfil=PUBLIC" target="_blank" style="border:1px solid #0d47a1;" class="btn btn-default btn-home" role="button">
+							<div class="btn-home-icon" style="background-color: #0d47a1;background-image:url(https://ses.telecentro.net.ar/images/favicon.ico);">&nbsp;</div>
+							<span>Sistema de Eventos de Servicios</span>
+							</a>
+	</div>
+    <div class="col-md-2" style="margin:0px;padding:4px;">
+							<a href="scripts/postPerfilUrl.php?sistema=Sonda a Sistemas&amp;perfil=OP-GGR-CEOP" target="_blank" style="border:1px solid black;" class="btn btn-default btn-home" role="button">
+							<div class="btn-home-icon" style="">&nbsp;</div>
+							<span>Sonda a Sistemas</span>
+							</a>
+	</div>
+    <div class="col-md-2" style="margin:0px;padding:4px;">
+							<a href="scripts/postPerfilUrl.php?sistema=VIENA&amp;perfil=HOME_TICKET_TAREA" target="_blank" style="border:1px solid #ffffff;" class="btn btn-default btn-home" role="button">
+							<div class="btn-home-icon" style="background-color: #ffffff;background-image:url(https://viena.telecentro.net.ar/img/viena.207a7c4b.png);">&nbsp;</div>
+							<span>VIENA</span>
+							</a>
+	</div>
+</div>
+</nav>
+`;
+divcontainer = document.querySelector("body > div > div");
+divcontainer.insertAdjacentHTML("beforeend", newNav1);
+
+//script
+document.getElementById("us_access_nav").addEventListener("click", function() {
+    var nav = document.getElementById('usefull_nav');
+if (nav.style.display == ''||nav.style.display == "block"){
+nav.style.display = "none";
+} else {
+nav.style.display = "block";
+}
+});
 }

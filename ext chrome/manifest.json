@@ -30,6 +30,7 @@
     "host_permissions": [
         "https://moica2.telecentro.net.ar/home.php",
         "https://moica2.telecentro.net.ar/viewCrearTktManual.php",
-        "http://iway.telecentro.net.ar/index.php"
+        "http://iway.telecentro.net.ar/index.php",
+        "https://usuarios.telecentro.net.ar/home.php"
     ]
 }
