@@ -1,3 +1,63 @@
+/*(function() {
+    'use strict';
+  
+    const urlUS = 'https://usuarios.telecentro.net.ar/scripts/postPerfilUrl.php?sistema=Moica%202&perfil=OP-GGR-CEOP';
+    //const urlMO = 'https://moica2.telecentro.net.ar/index.php';
+    const cycle_time = 15000;
+    const request_timeout = 3000;
+    var is_active = true;
+   // var paramfinal;
+
+    var request_to_moica = function() {
+        if (!is_active) {
+            return;
+        }
+        var xhttp = new XMLHttpRequest();
+        xhttp.timeout = request_timeout;
+        xhttp.onreadystatechange = function() {
+            if (!is_active || this.readyState != 4) {
+               /* var parametros = this.responseText;
+                if (parametros.search("'") != -1){
+                    var principio = parametros.search("'");
+                    var final = parametros.indexOf("'", principio +1);
+                    paramfinal = parametros.slice(principio+1, final);
+                    console.log(paramfinal);
+                } else {
+                    console.log("NOPE: " + parametros.search("'"));
+                }
+                console.log("reset: " + this.responseText);
+                return;
+            }
+        };
+        if(window.location.host == 'usuarios.telecentro.net.ar'){ 
+        xhttp.open('POST', urlUS, true);
+        xhttp.send();
+        }
+       /* if(window.location.host == "moica2.telecentro.net.ar"){
+            console.log("reset Moica");
+        xhttp.open('POST', urlMO, true);
+        xhttp.send(paramfinal);
+        }
+
+    };
+
+  
+  
+    var init = function() {
+        setInterval(request_to_moica, cycle_time);
+        request_to_moica();
+    };
+  
+  
+    init();
+  
+  })();*/
+
+  if (window.location.protocol === "http:" && window.location.host === "moica2.telecentro.net.ar"){
+      console.log("cambie protocolo");
+    window.location.protocol = "https:";
+}
+
 //crear tkt
 if(document.querySelector("#FO-TICKET-ADD > div.modal-header > h4") != null){ 
             var selectcrear = document.querySelector("#TKT-ORIGEN-ADD");
@@ -90,7 +150,7 @@ chrome.runtime.sendMessage({
 }, response => {
     if (response.message === 'success') {
     	var zz = `${response.payload}`;
-    var x = document.getElementById('ZONA-SELECT').getElementsByTagName('option');
+        var x = document.getElementById('ZONA-SELECT').getElementsByTagName('option');
         if(zz >= 8) {
     	 zz = zz - 8;
      x[3].selected = true;	

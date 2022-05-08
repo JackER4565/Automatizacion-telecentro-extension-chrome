@@ -1,4 +1,5 @@
 
+
 window.addEventListener('DOMContentLoaded', function() {
     // your button here
     var link = document.getElementById('vertktbutt');
@@ -7,12 +8,12 @@ window.addEventListener('DOMContentLoaded', function() {
     // onClick's logic below:
     link.addEventListener('click', function() {
       var inpt = document.getElementById("vertkt").value;
-        var newURL = "http://moica2.telecentro.net.ar/verTicket.php?ticket=" + inpt;
+        var newURL = "https://moica2.telecentro.net.ar/verTicket.php?ticket=" + inpt;
         chrome.tabs.create({ url: newURL });
     });
         link2.addEventListener('click', function() {
           var inpt = document.getElementById("vertkt").value;
-        var newURL = "http://moica2.telecentro.net.ar/buscarTicket.php?ticket=" + inpt;
+        var newURL = "https://moica2.telecentro.net.ar/buscarTicket.php?ticket=" + inpt;
         chrome.tabs.create({ url: newURL });
     });
         link3.addEventListener('click', function() {
