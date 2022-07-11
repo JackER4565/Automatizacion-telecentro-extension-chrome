@@ -5,31 +5,18 @@
     
   </head>
   <body>
-    <table border="1" style="border-collapse: collapse">
-      <tr>
-        <td colspan="2">
-          <input id="vertkt" autofocus ></input>
-        </td>
-      </tr>
-    <tr>
-      <td>
+    <canvas id="canvas" width="250" height="139"></canvas>
+    <canvas id="canvas2" width="230" height="139"></canvas>
+
+    <div class="container">
+      <input id="vertkt" autofocus placeholder="Pega el tkt"/>
+      <div class="container__buttons">
         <button id="vertktbutt" >Ver Ticket</button>
-      </td>
-      <td>
         <button id="buscarTkt">Buscar Ticket</button>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" width="100%">
-        <p id="demo"></p>
-        <button id="CrearTkt" width="100%">Crear Ticket</button>
-      </td>
-    </tr><!--
-	 <tr>
-    <td ><input id="vernodo" ></input></td>
-    <td ><button id="Nodobtn"></button></td>
-  </tr>--> 
-    </table>
-    <script src="popup.js"></script>
+      </div>
+      <button id="CrearTkt">Crear Ticket</button>
+    </div>
+
+    <script src="popup.js"></script>    
   </body>
 </html>

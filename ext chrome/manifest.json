@@ -1,7 +1,7 @@
 {
   "name": "Moica 2.0",
   "description": "Creado por Fabreezio",
-  "version": "0.1.0",
+  "version": "0.1.8",
   "manifest_version": 3,
 
     "icons": {
@@ -31,7 +31,14 @@
     "host_permissions": [
         "*://moica2.telecentro.net.ar/*",
         "http://iway.telecentro.net.ar/index.php",
-        "https://usuarios.telecentro.net.ar/home.php"
-    ]
+        "https://usuarios.telecentro.net.ar/home.php",
+        "*://m5.telecentro.net.ar/"
+    ],
+        "content_scripts": [
+            {
+              "matches": ["https://usuarios.telecentro.net.ar/home.php"],
+              "run_at": "document_start",
+              "js": ["cSusuarios.js"]
+            }
+          ]
 }
-
